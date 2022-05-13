@@ -1,0 +1,185 @@
+/* Create variable */
+:root {
+--interactive-rating-color-orange: hsl(25, 97%, 53%);
+--interactive-rating-color-pure-white: hsl(0, 0%, 100%);
+--interactive-rating-color-dark-blue:hsl(213, 19%, 18%);
+--interactive-rating-color-very-dark-blue:hsl(216, 12%, 8%);
+--interactive-rating-color-light-grey: hsl(217, 12%, 63%);
+--interactive-rating-color-medium-grey: hsl(216, 12%, 54%);
+--interactive-rating-gradient-black: radial-gradient(98.96% 98.96% at 50% 0%, #232A34 0%, #181E27 100%);
+}
+*{
+    box-sizing: border-box;
+    font-family: 'Overpass', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: auto;
+}
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--interactive-rating-color-very-dark-blue);
+}
+
+main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hidden{
+    display: none;
+}
+.interactive-card{
+    width: 514px;
+    height: 442px;
+    background: var(--interactive-rating-gradient-black);
+    border-radius: 30px;
+    /* height: fit-content; */
+    position: relative;
+    overflow: hidden;
+
+}
+#input-state{
+    z-index: 2;
+}
+#success-state{
+    z-index: 1;
+    opacity: 0;
+}
+.interactve-card-step-first, .interactive-card-success{
+    position: absolute;
+    padding: 40px;
+
+}
+
+
+.interactive-card__header__svg{
+    width: fit-content;
+    padding: 16px;
+    border-radius: 100%;
+    background: var(--interactive-rating-color-dark-blue);
+}
+
+.interactive-card__body{
+    margin-top: 30px;
+
+}
+
+.interactive-card__body h1{
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--interactive-rating-color-pure-white);
+    margin-bottom: 10px;
+}
+.interactive-card__body p {
+    font-size: 15px;
+    line-height: 24px;
+    color: var(--interactive-rating-color-light-grey);
+    margin-bottom: 10px;
+}
+.interactive-card__rating{
+    display: flex;
+    gap: 32px;    
+    margin-top: 30px;
+}
+.interactive-card__rating__item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: var(--interactive-rating-color-dark-blue);
+    border-radius: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.interactive-card__rating__item:hover{
+    background: var(--interactive-rating-color-orange);
+}
+.interactive-card__rating__item:hover span{
+    color: var(--interactive-rating-color-pure-white);
+}
+.interactive-card__rating__item span{
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--interactive-rating-color-medium-grey);
+}
+.interactive-card__footer{
+    margin-top: 32px;
+}
+.interactive-card__footer__button{
+    width: 100%;
+    padding: 10px 0;
+    background: var(--interactive-rating-color-orange);
+    border: none;
+    border-radius: 23px;
+    color: var(--interactive-rating-color-pure-white);
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: all 0.2s ease-in-out;
+
+}
+.interactive-card__footer__button:hover{
+    background: var(--interactive-rating-color-pure-white);
+    color: var(--interactive-rating-color-orange);
+}
+
+.actif-state{
+    background: var(--interactive-rating-color-orange);
+}
+.actif-state span{
+    color: var(--interactive-rating-color-pure-white);
+}
+
+.interactive-card__body-success{
+    text-align: center;
+}
+.interactive-card__header-success{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.interactive-card__header__svg-success{
+    background: none;
+}
+.interactive-card__ratingresult{
+    background: var(--interactive-rating-color-dark-blue);
+    width: fit-content;
+    padding: 5px 20px;
+    border-radius: 22px;
+    margin: auto;
+    margin-top: 32px;
+}
+.interactive-card__ratingresult span{
+    font-size: 15px;
+    line-height: 24px;
+    color: var(--interactive-rating-color-orange);
+}
+
+.loader{
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+.loader svg{
+    width: 100px;
+    height: 100px;
+
+}
+
+@media screen and (max-width: 768px){
+    main{
+        padding: 0 20px;
+    }
+    
+}
